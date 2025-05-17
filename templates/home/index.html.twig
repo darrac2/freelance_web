@@ -3,18 +3,401 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    !-- Hero Section -->
+    <section id="hero" class="relative">
+        <div class="hero-bg"></div>
+        <div class="particles" id="particles"></div>
+        
+        <div class="container mx-auto px-4 hero-content">
+            <div class="flex flex-col items-center justify-center text-center">
+                <h1 class="text-5xl md:text-7xl font-bold mb-8 neon-text hero-title">
+                    <span class="block">Créativité.</span>
+                    <span class="block">Innovation.</span>
+                    <span class="block">Excellence.</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-12 max-w-xl hero-subtitle">
+                    Développeur web passionné par la création d'expériences numériques exceptionnelles.
+                </p>
+                <a href="#about" class="btn bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all relative overflow-hidden">
+                    Découvrir
+                </a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down text-2xl animate-bounce"></i>
+        </div>
+    </section>
+     <!-- About Section -->
+    <section id="about" class="relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 neon-text">À propos</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-cyan-500 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 glass p-6 rounded-2xl transform hover:scale-105 transition-all">
+                    <div class="w-full h-96 rounded-xl bg-gradient-to-br from-purple-700 to-cyan-600 flex items-center justify-center">
+                        <i class="fas fa-user-circle text-8xl text-white opacity-50"></i>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-3xl font-bold mb-6">Qui suis-je ?</h3>
+                    <p class="text-lg mb-6">
+                        Je m'appelle Eduardo SA E SILVA, développeur web freelance basé à Provins. 
+                        Depuis plusieurs années, je conçois des sites web sur mesure pour des entrepreneurs, 
+                        des PME et des associations qui souhaitent renforcer leur présence en ligne. Ma mission : 
+                        transformer vos idées en solutions digitales efficaces, esthétiques et adaptées à vos besoins.
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/xampp/htdocs/freelance_web/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>C:/xampp/htdocs/freelance_web/templates/home/index.html.twig</code></li>
-    </ul>
-</div>
+
+
+                    </p>
+                    <p class="text-lg mb-6">
+                        Grâce à mes compétences en développement (HTML, CSS, PHP, JavaScript, MySQL) et en design graphique (Photoshop, Illustrator, InDesign), je vous accompagne de A à Z : de la création de votre identité visuelle à la mise en ligne de votre site, en passant par l'intégration de CMS comme WordPress ou Prestashop.
+
+                        Je suis convaincu que chaque projet mérite une attention particulière. C'est pourquoi je privilégie une approche collaborative et transparente, en vous impliquant à chaque étape du processus. Mon objectif est de vous fournir un site web responsive, optimisé pour le référencement naturel (SEO) et facile à administrer, afin que vous puissiez gérer votre contenu en toute autonomie.
+
+                        En choisissant de travailler avec moi, vous bénéficiez d'un interlocuteur unique, réactif et à l'écoute, qui mettra tout en œuvre pour concrétiser votre projet web avec professionnalisme et créativité.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 rounded-full bg-purple-600 text-white">Créatif</span>
+                        <span class="px-4 py-2 rounded-full bg-cyan-600 text-white">Innovant</span>
+                        <span class="px-4 py-2 rounded-full bg-purple-600 text-white">Méthodique</span>
+                        <span class="px-4 py-2 rounded-full bg-cyan-600 text-white">Passionné</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Projects Section -->
+    <section id="projects" class="relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 neon-text">Mes Projets</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-cyan-500 mx-auto"></div>
+                <p class="text-lg mt-6 max-w-2xl mx-auto">
+                    Découvrez une sélection de mes réalisations. Chaque projet reflète ma passion pour
+                    l'excellence et l'innovation.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+                <!-- Project 1 -->
+                <div class="project-card h-80 glass">
+                    <div class="w-full h-full bg-gradient-to-br from-purple-700 to-cyan-600 flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-6xl text-white opacity-50"></i>
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="text-xl font-bold text-white mb-2">Projet 1</h3>
+                        <p class="text-gray-200 mb-4">Description courte du projet. Technologies utilisées et objectifs atteints.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-white hover:text-purple-400 transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="text-white hover:text-purple-400 transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card h-80 glass">
+                    <div class="w-full h-full bg-gradient-to-br from-purple-700 to-cyan-600 flex items-center justify-center">
+                        <i class="fas fa-mobile-alt text-6xl text-white opacity-50"></i>
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="text-xl font-bold text-white mb-2">Projet 2</h3>
+                        <p class="text-gray-200 mb-4">Description courte du projet. Technologies utilisées et objectifs atteints.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-white hover:text-purple-400 transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="text-white hover:text-purple-400 transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card h-80 glass">
+                    <div class="w-full h-full bg-gradient-to-br from-purple-700 to-cyan-600 flex items-center justify-center">
+                        <i class="fas fa-shopping-cart text-6xl text-white opacity-50"></i>
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="text-xl font-bold text-white mb-2">Projet 3</h3>
+                        <p class="text-gray-200 mb-4">Description courte du projet. Technologies utilisées et objectifs atteints.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-white hover:text-purple-400 transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="text-white hover:text-purple-400 transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="btn bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all relative overflow-hidden">
+                    Voir plus de projets
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 neon-text">Compétences</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-cyan-500 mx-auto"></div>
+                <p class="text-lg mt-6 max-w-2xl mx-auto">
+                    Mon stack technologique et mes domaines d'expertise.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend Skills -->
+                <div class="glass p-8 rounded-2xl skill-item">
+                    <div class="text-center mb-6">
+                        <div class="inline-block p-4 rounded-full bg-purple-600 bg-opacity-20 mb-4">
+                            <i class="fas fa-code text-3xl text-purple-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Frontend</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fab fa-html5 text-orange-500 mr-3"></i>
+                            <span>HTML5</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-css3-alt text-blue-500 mr-3"></i>
+                            <span>CSS3 / SCSS</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-js text-yellow-500 mr-3"></i>
+                            <span>JavaScript / TypeScript</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-react text-blue-400 mr-3"></i>
+                            <span>React / Next.js</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-vuejs text-green-500 mr-3"></i>
+                            <span>Vue.js</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Backend Skills -->
+                <div class="glass p-8 rounded-2xl skill-item">
+                    <div class="text-center mb-6">
+                        <div class="inline-block p-4 rounded-full bg-cyan-600 bg-opacity-20 mb-4">
+                            <i class="fas fa-database text-3xl text-cyan-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Backend</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fab fa-node-js text-green-600 mr-3"></i>
+                            <span>Node.js / Express</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-php text-purple-400 mr-3"></i>
+                            <span>PHP / Laravel</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-database text-blue-500 mr-3"></i>
+                            <span>SQL / NoSQL</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-fire text-orange-500 mr-3"></i>
+                            <span>Firebase</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-python text-blue-600 mr-3"></i>
+                            <span>Python</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Tools & Others -->
+                <div class="glass p-8 rounded-2xl skill-item">
+                    <div class="text-center mb-6">
+                        <div class="inline-block p-4 rounded-full bg-purple-600 bg-opacity-20 mb-4">
+                            <i class="fas fa-tools text-3xl text-purple-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Outils & Autres</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fab fa-github text-gray-500 mr-3"></i>
+                            <span>Git / GitHub</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-docker text-blue-500 mr-3"></i>
+                            <span>Docker</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-cloud text-blue-400 mr-3"></i>
+                            <span>AWS / GCP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-mobile-alt text-green-500 mr-3"></i>
+                            <span>Responsive Design</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-universal-access text-red-500 mr-3"></i>
+                            <span>Accessibilité Web</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Progress bars -->
+            <div class="mt-16 max-w-3xl mx-auto">
+                <div class="mb-8">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold">Frontend Development</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="h-3 bg-gray-700 rounded-full">
+                        <div class="h-full rounded-full bg-gradient-to-r from-purple-600 to-cyan-500" style="width: 90%"></div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold">Backend Development</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="h-3 bg-gray-700 rounded-full">
+                        <div class="h-full rounded-full bg-gradient-to-r from-purple-600 to-cyan-500" style="width: 85%"></div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold">UI/UX Design</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="h-3 bg-gray-700 rounded-full">
+                        <div class="h-full rounded-full bg-gradient-to-r from-purple-600 to-cyan-500" style="width: 80%"></div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold">DevOps</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="h-3 bg-gray-700 rounded-full">
+                        <div class="h-full rounded-full bg-gradient-to-r from-purple-600 to-cyan-500" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 neon-text">Contact</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-cyan-500 mx-auto"></div>
+                <p class="text-lg mt-6 max-w-2xl mx-auto">
+                    Intéressé par une collaboration ? N'hésitez pas à me contacter.
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-10">
+                <div class="md:w-1/2">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2 font-medium">Nom</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg form-input" placeholder="Votre nom">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block mb-2 font-medium">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg form-input" placeholder="votre@email.com">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block mb-2 font-medium">Message</label>
+                            <input id="message" rows="5" class="w-full px-4 py-3 rounded-lg form-input" placeholder="Votre message" />
+                        </div>
+                        
+                        <button type="submit" class="btn bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all relative overflow-hidden w-full">
+                            Envoyer
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="glass p-8 rounded-2xl h-full">
+                        <h3 class="text-2xl font-bold mb-6">Informations de contact</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="p-3 rounded-full bg-purple-600 bg-opacity-20 mr-4">
+                                    <i class="fas fa-envelope text-xl text-purple-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Email</h4>
+                                    <p>contact@exemple.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="p-3 rounded-full bg-purple-600 bg-opacity-20 mr-4">
+                                    <i class="fas fa-map-marker-alt text-xl text-purple-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Localisation</h4>
+                                    <p>Paris, France</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="p-3 rounded-full bg-purple-600 bg-opacity-20 mr-4">
+                                    <i class="fas fa-phone-alt text-xl text-purple-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Téléphone</h4>
+                                    <p>+33 (0)1 23 45 67 89</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10">
+                            <h4 class="font-semibold mb-4">Réseaux sociaux</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="p-3 rounded-full bg-purple-600 bg-opacity-20 hover:bg-opacity-40 transition-all">
+                                    <i class="fab fa-linkedin-in text-xl text-purple-500"></i>
+                                </a>
+                                <a href="#" class="p-3 rounded-full bg-purple-600 bg-opacity-20 hover:bg-opacity-40 transition-all">
+                                    <i class="fab fa-github text-xl text-purple-500"></i>
+                                </a>
+                                <a href="#" class="p-3 rounded-full bg-purple-600 bg-opacity-20 hover:bg-opacity-40 transition-all">
+                                    <i class="fab fa-twitter text-xl text-purple-500"></i>
+                                </a>
+                                <a href="#" class="p-3 rounded-full bg-purple-600 bg-opacity-20 hover:bg-opacity-40 transition-all">
+                                    <i class="fab fa-dribbble text-xl text-purple-500"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 {% endblock %}
