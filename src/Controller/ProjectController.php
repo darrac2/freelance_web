@@ -28,6 +28,8 @@ final class ProjectController extends AbstractController
         $project = new Project();
         $form = $this->createForm(ProjectForm::class, $project);
         $form->handleRequest($request);
+        $project->setPublier(false);
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($project);

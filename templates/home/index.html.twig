@@ -86,7 +86,8 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
+                {% for project in projects %}
+                {% if project.publier  == true %}
                 <!-- Project 1 -->
                 <div class="project-card h-80 glass">
                     <div class="w-full h-full bg-gradient-to-br from-purple-700 to-cyan-600 flex items-center justify-center">
@@ -105,50 +106,43 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card h-80 glass">
-                    <div class="w-full h-full bg-gradient-to-br from-purple-700 to-cyan-600 flex items-center justify-center">
-                        <i class="fas fa-mobile-alt text-6xl text-white opacity-50"></i>
-                    </div>
-                    <div class="project-overlay">
-                        <h3 class="text-xl font-bold text-white mb-2">Projet 2</h3>
-                        <p class="text-gray-200 mb-4">Description courte du projet. Technologies utilisées et objectifs atteints.</p>
-                        <div class="flex space-x-3">
-                            <a href="#" class="text-white hover:text-purple-400 transition-colors">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="#" class="text-white hover:text-purple-400 transition-colors">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card h-80 glass">
-                    <div class="w-full h-full bg-gradient-to-br from-purple-700 to-cyan-600 flex items-center justify-center">
-                        <i class="fas fa-shopping-cart text-6xl text-white opacity-50"></i>
-                    </div>
-                    <div class="project-overlay">
-                        <h3 class="text-xl font-bold text-white mb-2">Projet 3</h3>
-                        <p class="text-gray-200 mb-4">Description courte du projet. Technologies utilisées et objectifs atteints.</p>
-                        <div class="flex space-x-3">
-                            <a href="#" class="text-white hover:text-purple-400 transition-colors">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="#" class="text-white hover:text-purple-400 transition-colors">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                {% endif %}
+                {% endfor %}
             
             <div class="text-center mt-12">
                 <a href="#" class="btn bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all relative overflow-hidden">
                     Voir plus de projets
                 </a>
+            </div>
+        </div>
+    </section>
+    <!-- offre Section -->
+    <section id="offre" class="relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 neon-text">Offres de Services</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-cyan-500 mx-auto"></div>
+                <p class="text-lg mt-6 max-w-2xl mx-auto">
+                    Découvrez mes offres de services adaptées à vos besoins.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="glass p-8 rounded-2xl">
+                    <div class="text-center mb-6">
+                        <div class="w-full h-full bg-gradient-to-br from-purple-700 to-cyan-600 flex items-center justify-center">
+                            <i class="fas fa-laptop-code text-6xl text-white opacity-50"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Développement Web</h3>
+                    </div>
+                    <p class="text-gray-200 mb-6">
+                        Création de sites web sur mesure, optimisés pour le SEO et adaptés à tous les appareils.
+                    </p>
+                    <a href="#" class="btn bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all relative overflow-hidden">
+                        En savoir plus
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -399,5 +393,30 @@
             </div>
         </div>
     </section>
+    
+    <!-- Modal project -->
+    <div id="mentions-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 hidden">
+        <div class="bg-gray-900 text-white rounded-lg shadow-lg max-w-lg w-full mx-4 relative">
+            <button id="close-mentions" class="absolute top-3 right-3 text-2xl text-gray-400 hover:text-white">&times;</button>
+            <div class="p-6 overflow-y-auto max-h-[80vh]">
+                <h2 class="text-xl font-bold mb-4">Mentions légales</h2>
+                <p class="text-sm leading-relaxed">
+                    Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie numérique, il est précisé aux utilisateurs du site Eduardo SA E SILVA freelance l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi.<br><br>
+                    <strong>Edition du site</strong><br>
+                    Le présent site, accessible à l’URL <a href="https://eduardo-saesilva-freelance.com/" class="underline text-purple-400">https://eduardo-saesilva-freelance.com/</a> (le « Site »), est édité par :<br>
+                    Eduardo SA E SILVA, résidant 18 rue de la venière 77160 Provins, né(e) le 20/03/1997,<br><br>
+                    <strong>Hébergement</strong><br>
+                    Le Site est hébergé par la société PlanetHoster, situé 4416 Louis-B.-Mayer Laval, Québec Canada H7P 0G1, (contact téléphonique ou email : (+1) 855 774 4678).<br><br>
+                    <strong>Directeur de publication</strong><br>
+                    Le Directeur de la publication du Site est Eduardo SA E SILVA.<br><br>
+                    <strong>Nous contacter</strong><br>
+                    Par téléphone : +33782168872<br>
+                    Par email : eduardo.saesilva@outlook.fr<br>
+                    Par courrier : 18 rue de la venière 77160 Provins<br><br>
+                    Génération des mentions légales par Legalstart.
+                </p>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
