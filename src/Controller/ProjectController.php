@@ -7,9 +7,11 @@ use App\Form\ProjectForm;
 use App\Repository\ProjectRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 #[Route('/project')]
 final class ProjectController extends AbstractController
@@ -23,7 +25,7 @@ final class ProjectController extends AbstractController
     }
 
     #[Route('/new', name: 'app_project_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
     {
         $project = new Project();
         $form = $this->createForm(ProjectForm::class, $project);
@@ -32,6 +34,31 @@ final class ProjectController extends AbstractController
 
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // Save the uploaded image if there is one 
+            $imagesource = $form->get('image')->getData();
+            if ($imagesource) {
+                //changer le nom pour evité les doublon 
+                $originalFilename = pathinfo($imagesource->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$imagesource->guessExtension();
+                //creer et déplacer l'image
+                try {
+                    $source = $this->getParameter("data_directory");
+                    $url = $source."/images/project";
+                    if (file_exists( $url) == false){
+                        mkdir($url, 0775, true );
+                    }
+                    
+                    $imagesource->move(
+                        $url,
+                        $newFilename
+                    );
+                    $project->setImage("/uploads/images/project/".$newFilename);
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+            }
+
             $entityManager->persist($project);
             $entityManager->flush();
 

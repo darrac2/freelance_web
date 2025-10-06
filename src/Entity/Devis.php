@@ -32,11 +32,14 @@ class Devis
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $adresse_web = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $project = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
+
+    #[ORM\ManyToOne(inversedBy: 'devis')]
+    private ?Offre $offre = null;
 
     public function getId(): ?int
     {
@@ -135,6 +138,18 @@ class Devis
     public function setDescription(string $description): static
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getOffre(): ?Offre
+    {
+        return $this->offre;
+    }
+
+    public function setOffre(?Offre $offre): static
+    {
+        $this->offre = $offre;
 
         return $this;
     }

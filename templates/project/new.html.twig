@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}New Project{% endblock %}
 
@@ -6,7 +6,14 @@
     <h1>Create new Project</h1>
 
     {{ include('project/_form.html.twig') }}
-
+    <section id="offrer" class="relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 neon-text">À propos</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-cyan-500 mx-auto"></div>
+            </div>
+        </div>
+    </section>
     <a href="{{ path('app_project_index') }}">back to list</a>
     <script>
         document.addEventListener('DOMContentLoaded', function() {

@@ -15,6 +15,15 @@ final class HomeController extends AbstractController
     {
         return $this->render('home/index.html.twig', [
 
+            'projects' => $projectRepository->findAll(),
+            'offre'=> $offreRepository->findBy(["publier" => true], ["id" => "DESC"], 3),
+        ]);
+    }
+    #[Route('/admin', name: 'app_admin')]
+    public function admin(ProjectRepository $projectRepository, OffreRepository $offreRepository): Response
+    {
+        return $this->render('home/admin.html.twig', [
+
             'projects' => $projectRepository->findBy(["publier" => true], ["id" => "DESC"], 3),
             'offre'=> $offreRepository->findBy(["publier" => true], ["id" => "DESC"], 3),
         ]);

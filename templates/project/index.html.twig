@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}Project index{% endblock %}
 
@@ -10,7 +10,6 @@
             <tr>
                 <th>Id</th>
                 <th>Title</th>
-                <th>Description</th>
                 <th>Image</th>
                 <th>actions</th>
             </tr>
@@ -20,7 +19,6 @@
             <tr>
                 <td>{{ project.id }}</td>
                 <td>{{ project.title }}</td>
-                <td>{{ project.description }}</td>
                 <td>{{ project.image }}</td>
                 <td>
                     <a href="{{ path('app_project_show', {'id': project.id}) }}">show</a>
